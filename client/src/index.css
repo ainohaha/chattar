@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  #root {
+    max-width: 1080px;
+    max-height: 1920px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+}
