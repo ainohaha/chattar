@@ -3,7 +3,7 @@ import { apiRequest } from "@/lib/queryClient";
 // Language display names for the UI
 export const languageNames: Record<string, string> = {
   fi: "Finnish",
-  ru: "Russian", 
+  ru: "Russian",
   fr: "French",
   es: "Spanish"
 };
@@ -44,6 +44,6 @@ export async function detectObjectsWithOpenAI(
     return response.objects || [];
   } catch (error) {
     console.error("Error detecting objects with OpenAI:", error);
-    return [];
+    throw error;
   }
 }

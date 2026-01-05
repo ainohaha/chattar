@@ -11,6 +11,7 @@ import Lesson from "@/pages/lesson";
 import CardReview from "@/pages/card-review";
 import CardView from "@/pages/card-view";
 import RealtimeTranslationPage from "@/pages/realtime-translation";
+import { RealtimeTranslation } from "@/components/realtime-translation";
 import OfflineVocabularyPage from "@/pages/offline-vocabulary";
 import { UserProvider } from "@/context/user-context";
 import { LessonProvider } from "@/context/lesson-context";
@@ -24,6 +25,10 @@ function Router() {
       <Route path="/card-review/:cardId" component={CardReview} />
       <Route path="/card-view/:cardId" component={CardView} />
       <Route path="/realtime-translation" component={RealtimeTranslationPage} />
+      {/* Standalone camera view for Electron app */}
+      <Route path="/standalone-cam">
+        <RealtimeTranslation showBackButton={false} />
+      </Route>
       <Route path="/offline-vocabulary" component={OfflineVocabularyPage} />
       <Route component={NotFound} />
     </Switch>
